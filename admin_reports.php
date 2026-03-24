@@ -15,8 +15,46 @@ $rows = [];
 if (is_array($raw) && isset($raw['items']) && is_array($raw['items'])) {
   foreach ($raw['items'] as $block) {
     if (is_array($block) && isset($block['items']) && is_array($block['items'])) {
+      $blockDiskon = to_int($block['diskon'] ?? 0);
+      $blockTotal = to_int($block['total_pemasukan'] ?? 0);
+
+      // Hitung total_pemasukan dari items jika belum ada di block
+      if ($blockTotal <= 0) {
+        foreach ($block['items'] as $r) {
+          if (!is_array($r)) continue;
+          $blockTotal += to_int($r['harga_jual'] ?? 0) * to_int($r['jumlah'] ?? 0);
+        }
+      }
+
+      $sisaDiskon = $blockDiskon;
+      $itemCount = count($block['items']);
+      $idx = 0;
+
       foreach ($block['items'] as $r) {
-        if (is_array($r)) $rows[] = $r;
+        if (!is_array($r)) continue;
+        $idx++;
+
+        // Jika item sudah punya diskon_item (data baru), pakai itu
+        if (isset($r['diskon_item'])) {
+          $r['_diskon_item'] = to_int($r['diskon_item']);
+        } elseif ($blockDiskon > 0 && $blockTotal > 0) {
+          // Distribusi proporsional untuk data lama
+          $qty = to_int($r['jumlah'] ?? 0);
+          if ($qty < 1) $qty = 1;
+          $harga = to_int($r['harga_jual'] ?? 0);
+          $subtotal = $harga * $qty;
+          if ($idx === $itemCount) {
+            $r['_diskon_item'] = $sisaDiskon;
+          } else {
+            $di = (int)round($blockDiskon * $subtotal / $blockTotal);
+            $r['_diskon_item'] = $di;
+            $sisaDiskon -= $di;
+          }
+        } else {
+          $r['_diskon_item'] = 0;
+        }
+
+        $rows[] = $r;
       }
     }
   }
@@ -115,7 +153,10 @@ foreach ($filtered as $r) {
   $sumOmzet += ($harga * $qty);
 
   // asumsi laba_per_produk = per pcs (lebih aman untuk qty>1)
-  $sumLaba += ($labaPer * max(1, $qty));
+  $diskonItem = to_int($r['_diskon_item'] ?? ($r['diskon_item'] ?? 0));
+  $labaLine = ($labaPer * max(1, $qty)) - $diskonItem;
+  if ($labaLine < 0) $labaLine = 0;
+  $sumLaba += $labaLine;
 
   $m = strtolower((string)($r['method_bayar'] ?? ''));
   if ($m === 'cash') $methodCash++;
@@ -339,7 +380,9 @@ $top5 = array_slice($top, 0, 5, true);
                 $qty = to_int($r['jumlah'] ?? 0);
                 $sub = $harga * $qty;
                 $labaPer = to_int($r['laba_per_produk'] ?? 0);
-                $laba = $labaPer * max(1, $qty);
+                $diskonItem = to_int($r['_diskon_item'] ?? ($r['diskon_item'] ?? 0));
+                $laba = ($labaPer * max(1, $qty)) - $diskonItem;
+                if ($laba < 0) $laba = 0;
 
                 $key = mb_strtolower("$tgl $nama $kat $kasir $met");
               ?>
