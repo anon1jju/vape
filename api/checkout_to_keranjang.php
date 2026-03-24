@@ -102,6 +102,35 @@ foreach ($cart as $i => $it) {
 if ($diskon > $totalPemasukan) $diskon = $totalPemasukan;
 $grandTotal = $totalPemasukan - $diskon;
 
+// Distribusikan diskon proporsional ke tiap item (field baru, backward compatible)
+if ($diskon > 0 && $totalPemasukan > 0) {
+  $lastI = null;
+  foreach ($cart as $i => $it) { if (is_array($it)) $lastI = $i; }
+  $accumulated = 0;
+  foreach ($cart as $i => $it) {
+    if (!is_array($it)) continue;
+    $harga = to_int($it['harga_jual'] ?? 0);
+    $qty   = to_int($it['jumlah'] ?? 0);
+    $subtotal = $harga * $qty;
+    if ($i === $lastI) {
+      $diskonItem = $diskon - $accumulated;
+    } else {
+      $diskonItem = (int)round(($subtotal / $totalPemasukan) * $diskon);
+      $accumulated += $diskonItem;
+    }
+    $cart[$i]['diskon_item'] = $diskonItem;
+    $cart[$i]['subtotal_setelah_diskon'] = $subtotal - $diskonItem;
+  }
+} else {
+  foreach ($cart as $i => $it) {
+    if (!is_array($it)) continue;
+    $harga = to_int($it['harga_jual'] ?? 0);
+    $qty   = to_int($it['jumlah'] ?? 0);
+    $cart[$i]['diskon_item'] = 0;
+    $cart[$i]['subtotal_setelah_diskon'] = $harga * $qty;
+  }
+}
+
 // validasi pembayaran (kalau diisi harus sama)
 $paid = $payCash + $payQris + $payTransfer;
 if ($paid !== 0 && $paid !== $grandTotal) {

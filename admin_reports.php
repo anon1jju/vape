@@ -11,13 +11,35 @@ $checkoutFile = __DIR__ . '/data/checkout.json';
 $raw = read_json_file($checkoutFile, ['items'=>[]]);
 
 // Struktur kamu: { items: [ { items: [ ...rows... ] }, ... ] }
+// Diskon di level block dipropagasikan ke tiap item secara proporsional (backward compatible)
 $rows = [];
 if (is_array($raw) && isset($raw['items']) && is_array($raw['items'])) {
   foreach ($raw['items'] as $block) {
-    if (is_array($block) && isset($block['items']) && is_array($block['items'])) {
-      foreach ($block['items'] as $r) {
-        if (is_array($r)) $rows[] = $r;
+    if (!is_array($block) || !isset($block['items']) || !is_array($block['items'])) continue;
+    $blockDiskon = to_int($block['diskon'] ?? 0);
+    $blockTotal  = to_int($block['total_pemasukan'] ?? 0);
+    $needsPropagate = ($blockDiskon > 0 && $blockTotal > 0);
+    $lastIdx = null;
+    if ($needsPropagate) {
+      foreach ($block['items'] as $k => $r) { if (is_array($r)) $lastIdx = $k; }
+    }
+    $accumulated = 0;
+    foreach ($block['items'] as $k => $r) {
+      if (!is_array($r)) continue;
+      if ($needsPropagate && !isset($r['diskon_item'])) {
+        $subtotal = to_int($r['harga_jual'] ?? 0) * to_int($r['jumlah'] ?? 0);
+        if ($k === $lastIdx) {
+          $r['diskon_item'] = $blockDiskon - $accumulated;
+        } else {
+          $r['diskon_item'] = (int)round(($subtotal / $blockTotal) * $blockDiskon);
+          $accumulated += $r['diskon_item'];
+        }
+        $r['subtotal_setelah_diskon'] = $subtotal - $r['diskon_item'];
+      } elseif (!isset($r['diskon_item'])) {
+        $r['diskon_item'] = 0;
+        $r['subtotal_setelah_diskon'] = to_int($r['harga_jual'] ?? 0) * to_int($r['jumlah'] ?? 0);
       }
+      $rows[] = $r;
     }
   }
 }
@@ -102,6 +124,7 @@ usort($filtered, function($a, $b){
 $totalLines = count($filtered);
 $totalQty = 0;
 $sumOmzet = 0;
+$sumDiskon = 0;
 $sumLaba = 0;
 
 $methodCash = 0; $methodQris = 0; $methodPartial = 0; $methodOther = 0;
@@ -110,9 +133,11 @@ foreach ($filtered as $r) {
   $qty = to_int($r['jumlah'] ?? 0);
   $harga = to_int($r['harga_jual'] ?? 0);
   $labaPer = to_int($r['laba_per_produk'] ?? 0);
+  $diskonItem = to_int($r['diskon_item'] ?? 0);
 
   $totalQty += $qty;
-  $sumOmzet += ($harga * $qty);
+  $sumOmzet += to_int($r['subtotal_setelah_diskon'] ?? ($harga * $qty));
+  $sumDiskon += $diskonItem;
 
   // asumsi laba_per_produk = per pcs (lebih aman untuk qty>1)
   $sumLaba += ($labaPer * max(1, $qty));
@@ -133,7 +158,7 @@ foreach ($filtered as $r) {
   if ($name === '') continue;
   if (!isset($top[$name])) $top[$name] = ['qty'=>0,'omzet'=>0];
   $top[$name]['qty'] += $qty;
-  $top[$name]['omzet'] += $harga * $qty;
+  $top[$name]['omzet'] += to_int($r['subtotal_setelah_diskon'] ?? ($harga * $qty));
 }
 uasort($top, fn($a,$b) => ($b['qty'] <=> $a['qty']));
 $top5 = array_slice($top, 0, 5, true);
@@ -242,8 +267,11 @@ $top5 = array_slice($top, 0, 5, true);
       </div>
 
       <div class="bg-white rounded-xl border border-[var(--accent-color)] p-4">
-        <div class="text-xs text-[var(--text-secondary)]">Omzet</div>
+        <div class="text-xs text-[var(--text-secondary)]">Omzet (setelah diskon)</div>
         <div class="text-2xl font-bold text-[var(--text-primary)] mt-1"><?= rupiah($sumOmzet) ?></div>
+        <?php if ($sumDiskon > 0): ?>
+        <div class="text-[11px] text-orange-500 mt-1">Diskon: <?= rupiah($sumDiskon) ?></div>
+        <?php endif; ?>
       </div>
 
       <div class="bg-white rounded-xl border border-[var(--accent-color)] p-4">
@@ -323,6 +351,7 @@ $top5 = array_slice($top, 0, 5, true);
               <th class="text-left p-3">Metode</th>
               <th class="text-right p-3">Harga</th>
               <th class="text-right p-3">Qty</th>
+              <th class="text-right p-3">Diskon</th>
               <th class="text-right p-3">Subtotal</th>
               <th class="text-right p-3">Laba</th>
             </tr>
@@ -337,7 +366,8 @@ $top5 = array_slice($top, 0, 5, true);
                 $met = (string)($r['method_bayar'] ?? '');
                 $harga = to_int($r['harga_jual'] ?? 0);
                 $qty = to_int($r['jumlah'] ?? 0);
-                $sub = $harga * $qty;
+                $diskonItem = to_int($r['diskon_item'] ?? 0);
+                $sub = to_int($r['subtotal_setelah_diskon'] ?? ($harga * $qty));
                 $labaPer = to_int($r['laba_per_produk'] ?? 0);
                 $laba = $labaPer * max(1, $qty);
 
@@ -351,6 +381,7 @@ $top5 = array_slice($top, 0, 5, true);
                 <td class="p-3"><?= htmlspecialchars($met) ?></td>
                 <td class="p-3 text-right"><?= rupiah($harga) ?></td>
                 <td class="p-3 text-right font-semibold"><?= (int)$qty ?></td>
+                <td class="p-3 text-right <?= $diskonItem > 0 ? 'text-orange-500' : 'text-[var(--text-secondary)]' ?>"><?= $diskonItem > 0 ? rupiah($diskonItem) : '-' ?></td>
                 <td class="p-3 text-right font-semibold"><?= rupiah($sub) ?></td>
                 <td class="p-3 text-right"><?= rupiah($laba) ?></td>
               </tr>
@@ -358,7 +389,7 @@ $top5 = array_slice($top, 0, 5, true);
 
             <?php if (count($filtered) === 0): ?>
               <tr>
-                <td class="p-4 text-sm text-[var(--text-secondary)]" colspan="9">Tidak ada data untuk filter ini.</td>
+                <td class="p-4 text-sm text-[var(--text-secondary)]" colspan="10">Tidak ada data untuk filter ini.</td>
               </tr>
             <?php endif; ?>
           </tbody>
