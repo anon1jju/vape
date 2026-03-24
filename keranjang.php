@@ -195,6 +195,23 @@ foreach ($trxList as $trx) {
                         </span>
                       <?php endif; ?>
                     </div>
+
+                    <!-- Form ubah tanggal -->
+                    <form method="POST" action="api/keranjang_update_tanggal.php" class="mt-2 inline-flex items-center gap-2" onclick="event.stopPropagation();">
+                      <input type="hidden" name="trx_index" value="<?= (int)$tIndex ?>">
+                      <label class="text-xs text-[var(--text-secondary)]">Ubah Tanggal:</label>
+                      <input type="date" name="tanggal"
+                             value="<?php
+                               $tglParts = explode('-', $tanggal);
+                               echo (count($tglParts) === 3) ? ($tglParts[2].'-'.$tglParts[1].'-'.$tglParts[0]) : date('Y-m-d');
+                             ?>"
+                             onclick="event.stopPropagation();"
+                             class="rounded border border-[var(--accent-color)] px-2 py-1 text-xs">
+                      <button onclick="event.stopPropagation();"
+                              class="rounded border border-[var(--primary-color)] bg-[var(--primary-color)] text-white px-2 py-1 text-xs hover:opacity-90">
+                        Simpan
+                      </button>
+                    </form>
                   </div>
 
                   <div class="flex flex-wrap items-center gap-3 justify-end">
