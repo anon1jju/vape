@@ -1,0 +1,1466 @@
+{
+    "1": {
+        "nama": "Omnipod fruity",
+        "harga_modal": 28750,
+        "harga_jual": 40000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "2": {
+        "nama": "Brtl",
+        "harga_modal": 30000,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "3": {
+        "nama": "Bobble pop salt",
+        "harga_modal": 28300,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "4": {
+        "nama": "Selleragow salt",
+        "harga_modal": 28700,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "5": {
+        "nama": "Omnipod coffe",
+        "harga_modal": 28750,
+        "harga_jual": 40000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "6": {
+        "nama": "Peanut butter jelly salt",
+        "harga_modal": 72500,
+        "harga_jual": 110000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "7": {
+        "nama": "American fruity salt",
+        "harga_modal": 75000,
+        "harga_jual": 100000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "8": {
+        "nama": "Kopi djiwa",
+        "harga_modal": 60000,
+        "harga_jual": 90000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "9": {
+        "nama": "Nafas salt",
+        "harga_modal": 65000,
+        "harga_jual": 95000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "10": {
+        "nama": "Soonix salt",
+        "harga_modal": 92500,
+        "harga_jual": 120000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "11": {
+        "nama": "Mael lee salt",
+        "harga_modal": 85000,
+        "harga_jual": 110000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "12": {
+        "nama": "Foom liquid",
+        "harga_modal": 82500,
+        "harga_jual": 110000,
+        "stok": 13,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "13": {
+        "nama": "Iceland salt",
+        "harga_modal": 77000,
+        "harga_jual": 110000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "14": {
+        "nama": "Paradewa mangga fb",
+        "harga_modal": 112500,
+        "harga_jual": 140000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "15": {
+        "nama": "Miru fb",
+        "harga_modal": 75000,
+        "harga_jual": 100000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "16": {
+        "nama": "Selleragow fb",
+        "harga_modal": 105000,
+        "harga_jual": 130000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "18": {
+        "nama": "Makna fb",
+        "harga_modal": 107500,
+        "harga_jual": 135000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "19": {
+        "nama": "The o rama v1 fb",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "20": {
+        "nama": "Soonix fb",
+        "harga_modal": 110000,
+        "harga_jual": 135000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "21": {
+        "nama": "Mael lee fb",
+        "harga_modal": 112500,
+        "harga_jual": 140000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "22": {
+        "nama": "Nixx pod with Battery",
+        "harga_modal": 400000,
+        "harga_jual": 480000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "23": {
+        "nama": "Nikmat salt v2",
+        "harga_modal": 72500,
+        "harga_jual": 100000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "24": {
+        "nama": "Makna salt",
+        "harga_modal": 95000,
+        "harga_jual": 120000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "26": {
+        "nama": "Nafas fb",
+        "harga_modal": 80000,
+        "harga_jual": 110000,
+        "stok": 5,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "27": {
+        "nama": "Lunar hexom",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "28": {
+        "nama": "Dark lunar",
+        "harga_modal": 0,
+        "harga_jual": 160000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "29": {
+        "nama": "King revers",
+        "harga_modal": 0,
+        "harga_jual": 170000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "30": {
+        "nama": "Bananalicious fb",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "31": {
+        "nama": "Creaminal fb",
+        "harga_modal": 133000,
+        "harga_jual": 160000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "32": {
+        "nama": "Lunar ice cream fb",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "33": {
+        "nama": "American fruity fb",
+        "harga_modal": 110000,
+        "harga_jual": 145000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "34": {
+        "nama": "Kendo",
+        "harga_modal": 50000,
+        "harga_jual": 75000,
+        "stok": 5,
+        "foto": "",
+        "kategori": "cotton"
+    },
+    "35": {
+        "nama": "Kapas trml",
+        "harga_modal": 0,
+        "harga_jual": 15000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "cotton"
+    },
+    "36": {
+        "nama": "Holy fiber",
+        "harga_modal": 32500,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "cotton"
+    },
+    "37": {
+        "nama": "Rta wasp nano",
+        "harga_modal": 115000,
+        "harga_jual": 180000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "rta"
+    },
+    "38": {
+        "nama": "Rta zeus",
+        "harga_modal": 255000,
+        "harga_jual": 350000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "rta"
+    },
+    "39": {
+        "nama": "Rta stalk",
+        "harga_modal": 290000,
+        "harga_jual": 360000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "rta"
+    },
+    "40": {
+        "nama": "Centaurus aio b80",
+        "harga_modal": 500000,
+        "harga_jual": 600000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "aio"
+    },
+    "41": {
+        "nama": "Oxva xlim pro 2",
+        "harga_modal": 270000,
+        "harga_jual": 330000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "42": {
+        "nama": "Oxva xlim go",
+        "harga_modal": 170000,
+        "harga_jual": 210000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "43": {
+        "nama": "Oxva vprime",
+        "harga_modal": 350000,
+        "harga_jual": 420000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "44": {
+        "nama": "Foom pod bundling",
+        "harga_modal": 160000,
+        "harga_jual": 210000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "45": {
+        "nama": "Ursa nano s",
+        "harga_modal": 120000,
+        "harga_jual": 180000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "46": {
+        "nama": "Wasp nano pod",
+        "harga_modal": 75000,
+        "harga_jual": 100000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "47": {
+        "nama": "Thelema elite pod",
+        "harga_modal": 195000,
+        "harga_jual": 300000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "48": {
+        "nama": "Nixx pod only bundling",
+        "harga_modal": 190000,
+        "harga_jual": 250000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "49": {
+        "nama": "Trml pod only",
+        "harga_modal": 140000,
+        "harga_jual": 200000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "50": {
+        "nama": "Roca",
+        "harga_modal": 85000,
+        "harga_jual": 110000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "51": {
+        "nama": "Catridge oxva xlim 0,6",
+        "harga_modal": 29000,
+        "harga_jual": 45000,
+        "stok": 9,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "52": {
+        "nama": "Catridge ursa nano 0,8",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 7,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "53": {
+        "nama": "Catridge trml 0,8",
+        "harga_modal": 30000,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "54": {
+        "nama": "Catridge argus 0,7",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "55": {
+        "nama": "Catridge foom",
+        "harga_modal": 27000,
+        "harga_jual": 40000,
+        "stok": 13,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "56": {
+        "nama": "Catridge wasp nano",
+        "harga_modal": 21600,
+        "harga_jual": 40000,
+        "stok": 9,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "57": {
+        "nama": "Catridge thelema 0,3",
+        "harga_modal": 33333,
+        "harga_jual": 45000,
+        "stok": 10,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "58": {
+        "nama": "Occ pnp x 0,2",
+        "harga_modal": 26000,
+        "harga_jual": 40000,
+        "stok": 9,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "59": {
+        "nama": "Occ caliburn 0,8",
+        "harga_modal": 25000,
+        "harga_jual": 40000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "60": {
+        "nama": "Battery vapcell",
+        "harga_modal": 40000,
+        "harga_jual": 85000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "battery"
+    },
+    "61": {
+        "nama": "Catridge wenak k1",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "battery"
+    },
+    "62": {
+        "nama": "Catridge wenak q",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "63": {
+        "nama": "Caliburn a3s",
+        "harga_modal": 75000,
+        "harga_jual": 100000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "64": {
+        "nama": "Manto aio plus 2",
+        "harga_modal": 0,
+        "harga_jual": 380000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "aio"
+    },
+    "65": {
+        "nama": "Driptip gecko",
+        "harga_modal": 15000,
+        "harga_jual": 40000,
+        "stok": 9,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "66": {
+        "nama": "Driptip n",
+        "harga_modal": 30000,
+        "harga_jual": 40000,
+        "stok": 5,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "67": {
+        "nama": "Trml T99",
+        "harga_modal": 460000,
+        "harga_jual": 530000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "mod"
+    },
+    "68": {
+        "nama": "Icelady bubblegum fb",
+        "harga_modal": 73750,
+        "harga_jual": 100000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "69": {
+        "nama": "Paradewa anggur fb",
+        "harga_modal": 112500,
+        "harga_jual": 140000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "70": {
+        "nama": "Toolkit",
+        "harga_modal": 55000,
+        "harga_jual": 70000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "71": {
+        "nama": "Lunix vision",
+        "harga_modal": 45000,
+        "harga_jual": 70000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "72": {
+        "nama": "Coil",
+        "harga_modal": 10000,
+        "harga_jual": 40000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "aio"
+    },
+    "73": {
+        "nama": "Nixx Liquid",
+        "harga_modal": 100000,
+        "harga_jual": 120000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "74": {
+        "nama": "Ox Passion 15 ml",
+        "harga_modal": 28300,
+        "harga_jual": 40000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "75": {
+        "nama": "Oxva xlim pro 2 edisi naruto",
+        "harga_modal": 285000,
+        "harga_jual": 340000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "76": {
+        "nama": "Icelady blackcurrant fb",
+        "harga_modal": 73750,
+        "harga_jual": 100000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "77": {
+        "nama": "Icelady salt",
+        "harga_modal": 27000,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "78": {
+        "nama": "Pocket",
+        "harga_modal": 80000,
+        "harga_jual": 105000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "79": {
+        "nama": "Takis salt",
+        "harga_modal": 55000,
+        "harga_jual": 80000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "80": {
+        "nama": "Catridge xross vaporesso",
+        "harga_modal": 26250,
+        "harga_jual": 40000,
+        "stok": 8,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "81": {
+        "nama": "Ara ara salt",
+        "harga_modal": 50000,
+        "harga_jual": 75000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "82": {
+        "nama": "Caliburn gk3",
+        "harga_modal": 105000,
+        "harga_jual": 160000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "83": {
+        "nama": "Catridge lunix vision",
+        "harga_modal": 27000,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "84": {
+        "nama": "Catridge oxva xlim 0.8",
+        "harga_modal": 29000,
+        "harga_jual": 45000,
+        "stok": 8,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "85": {
+        "nama": "Nixx filter perkotak",
+        "harga_modal": 30000,
+        "harga_jual": 50000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "86": {
+        "nama": "Catridge nixx 0.8",
+        "harga_modal": 31666,
+        "harga_jual": 45000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "87": {
+        "nama": "Freemax pod bundling",
+        "harga_modal": 87500,
+        "harga_jual": 140000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "88": {
+        "nama": "Catridge freemax 0.6",
+        "harga_modal": 26666,
+        "harga_jual": 40000,
+        "stok": 9,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "90": {
+        "nama": "Catridge markzero",
+        "harga_modal": 29000,
+        "harga_jual": 45000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "91": {
+        "nama": "Galaxy T360",
+        "harga_modal": 165000,
+        "harga_jual": 220000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "93": {
+        "nama": "Cake lady",
+        "harga_modal": 75000,
+        "harga_jual": 100000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "94": {
+        "nama": "Cas baterai zeus",
+        "harga_modal": 35000,
+        "harga_jual": 80000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "95": {
+        "nama": "Crackz fb",
+        "harga_modal": 115000,
+        "harga_jual": 140000,
+        "stok": 10,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "96": {
+        "nama": "Jusrakyat fb",
+        "harga_modal": 80000,
+        "harga_jual": 115000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "98": {
+        "nama": "Jusrakyat salt",
+        "harga_modal": 57500,
+        "harga_jual": 85000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "99": {
+        "nama": "Catridge elfbar 0.8",
+        "harga_modal": 31666,
+        "harga_jual": 45000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "100": {
+        "nama": "Catridge oxva xlim 0,4",
+        "harga_modal": 29000,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "101": {
+        "nama": "Bananarilla",
+        "harga_modal": 117500,
+        "harga_jual": 145000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "102": {
+        "nama": "Blunanarilla",
+        "harga_modal": 117500,
+        "harga_jual": 145000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "103": {
+        "nama": "Bananarilla Ice",
+        "harga_modal": 112500,
+        "harga_jual": 140000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "104": {
+        "nama": "Slank",
+        "harga_modal": 130000,
+        "harga_jual": 160000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "105": {
+        "nama": "Blondies fb",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "106": {
+        "nama": "Premium coil",
+        "harga_modal": 15000,
+        "harga_jual": 40000,
+        "stok": 8,
+        "foto": "",
+        "kategori": "lain"
+    },
+    "107": {
+        "nama": "Creamsie Weamsie Whim Berry",
+        "harga_modal": 127500,
+        "harga_jual": 160000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "109": {
+        "nama": "Meledak fb",
+        "harga_modal": 130000,
+        "harga_jual": 155000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "110": {
+        "nama": "Meledak salt",
+        "harga_modal": 90000,
+        "harga_jual": 115000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "111": {
+        "nama": "R99",
+        "harga_modal": 350000,
+        "harga_jual": 410000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "112": {
+        "nama": "Oxva xlim pro 3",
+        "harga_modal": 267500,
+        "harga_jual": 340000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "113": {
+        "nama": "Ursa nano 3",
+        "harga_modal": 135000,
+        "harga_jual": 190000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "114": {
+        "nama": "Oxva xlim sq pro 2",
+        "harga_modal": 310000,
+        "harga_jual": 370000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "115": {
+        "nama": "Oat drip fb",
+        "harga_modal": 125000,
+        "harga_jual": 150000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "117": {
+        "nama": "Muffin v1 fb",
+        "harga_modal": 120000,
+        "harga_jual": 145000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "118": {
+        "nama": "Muffin v1 salt",
+        "harga_modal": 80000,
+        "harga_jual": 110000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "119": {
+        "nama": "Crackz salt",
+        "harga_modal": 85000,
+        "harga_jual": 110000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "120": {
+        "nama": "Oxva Ultra",
+        "harga_modal": 320000,
+        "harga_jual": 380000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "121": {
+        "nama": "Catridge thelema 0.6",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "122": {
+        "nama": "Robacks monster",
+        "harga_modal": 117500,
+        "harga_jual": 145000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "123": {
+        "nama": "Rda wasp nano",
+        "harga_modal": 85000,
+        "harga_jual": 150000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "rda"
+    },
+    "124": {
+        "nama": "Centaurus m200",
+        "harga_modal": 455000,
+        "harga_jual": 570000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "mod"
+    },
+    "125": {
+        "nama": "Centaurus bt200",
+        "harga_modal": 545000,
+        "harga_jual": 660000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "mod"
+    },
+    "126": {
+        "nama": "Oxva xlim go 2",
+        "harga_modal": 162500,
+        "harga_jual": 220000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "127": {
+        "nama": "Nikmat blackberry pie fb",
+        "harga_modal": 120000,
+        "harga_jual": 145000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "128": {
+        "nama": "Nikmat apple pie fb",
+        "harga_modal": 120000,
+        "harga_jual": 145000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "129": {
+        "nama": "Centaurus e40",
+        "harga_modal": 240000,
+        "harga_jual": 320000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "130": {
+        "nama": "Occ vinci 0.3 (pnp-vm1)",
+        "harga_modal": 22000,
+        "harga_jual": 40000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "131": {
+        "nama": "Lunar ice cream salt",
+        "harga_modal": 95000,
+        "harga_jual": 120000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "132": {
+        "nama": "Thelema Art",
+        "harga_modal": 195000,
+        "harga_jual": 260000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "133": {
+        "nama": "Alexa Mod",
+        "harga_modal": 275000,
+        "harga_jual": 380000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "mod"
+    },
+    "134": {
+        "nama": "Koolmix",
+        "harga_modal": 23125,
+        "harga_jual": 40000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "135": {
+        "nama": "Rta dead rabbit",
+        "harga_modal": 275000,
+        "harga_jual": 350000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "rta"
+    },
+    "136": {
+        "nama": "Catridge Caliburn g3",
+        "harga_modal": 28750,
+        "harga_jual": 40000,
+        "stok": 6,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "137": {
+        "nama": "Catridge vprime",
+        "harga_modal": 42500,
+        "harga_jual": 55000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "138": {
+        "nama": "Catridge Nexlim 0.6",
+        "harga_modal": 36600,
+        "harga_jual": 50000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "139": {
+        "nama": "Skylar Salt",
+        "harga_modal": 85000,
+        "harga_jual": 110000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "140": {
+        "nama": "Lokal 30 ml",
+        "harga_modal": 57500,
+        "harga_jual": 80000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "141": {
+        "nama": "Lokal Salt",
+        "harga_modal": 32500,
+        "harga_jual": 45000,
+        "stok": 10,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "142": {
+        "nama": "Upod salt",
+        "harga_modal": 65000,
+        "harga_jual": 90000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "143": {
+        "nama": "Paradewa salt",
+        "harga_modal": 100000,
+        "harga_jual": 120000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "144": {
+        "nama": "Lcv tiramisu",
+        "harga_modal": 80000,
+        "harga_jual": 100000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "145": {
+        "nama": "Lcv strawpound cake",
+        "harga_modal": 80000,
+        "harga_jual": 100000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "146": {
+        "nama": "Tansu fb",
+        "harga_modal": 95000,
+        "harga_jual": 120000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "147": {
+        "nama": "Tokyo series fb",
+        "harga_modal": 127500,
+        "harga_jual": 160000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "148": {
+        "nama": "Strawberry mochi fb",
+        "harga_modal": 122500,
+        "harga_jual": 150000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "149": {
+        "nama": "Catridge Oxva Oneo",
+        "harga_modal": 33333,
+        "harga_jual": 45000,
+        "stok": 10,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "150": {
+        "nama": "Dripstate peanut butter",
+        "harga_modal": 115000,
+        "harga_jual": 140000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "151": {
+        "nama": "Catridge Joiway 0.8",
+        "harga_modal": 29000,
+        "harga_jual": 45000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "152": {
+        "nama": "Catridge Relx",
+        "harga_modal": 31666,
+        "harga_jual": 45000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "153": {
+        "nama": "Crackz 15 ml",
+        "harga_modal": 38300,
+        "harga_jual": 50000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "154": {
+        "nama": "Trml T200",
+        "harga_modal": 495000,
+        "harga_jual": 600000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "mod"
+    },
+    "155": {
+        "nama": "Baterai charge up 2500",
+        "harga_modal": 50000,
+        "harga_jual": 90000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "battery"
+    },
+    "156": {
+        "nama": "Bequ",
+        "harga_modal": 110000,
+        "harga_jual": 135000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "157": {
+        "nama": "Rda dead rabbit",
+        "harga_modal": 285000,
+        "harga_jual": 370000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "rda"
+    },
+    "158": {
+        "nama": "Ketan hitam salt",
+        "harga_modal": 62500,
+        "harga_jual": 90000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "159": {
+        "nama": "Slay salt",
+        "harga_modal": 72500,
+        "harga_jual": 100000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "160": {
+        "nama": "Tigac fb",
+        "harga_modal": 125000,
+        "harga_jual": 150000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "161": {
+        "nama": "Trml pod bundling",
+        "harga_modal": 165000,
+        "harga_jual": 220000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "162": {
+        "nama": "Tokyoman salt",
+        "harga_modal": 90000,
+        "harga_jual": 115000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "163": {
+        "nama": "Alacarte fb",
+        "harga_modal": 122500,
+        "harga_jual": 150000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "164": {
+        "nama": "Candyman fb",
+        "harga_modal": 107500,
+        "harga_jual": 135000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "165": {
+        "nama": "Trilogy fb",
+        "harga_modal": 125000,
+        "harga_jual": 155000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "166": {
+        "nama": "Creamypedia salt",
+        "harga_modal": 31500,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "167": {
+        "nama": "Creaminal 15 ml",
+        "harga_modal": 37500,
+        "harga_jual": 50000,
+        "stok": 8,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "168": {
+        "nama": "Empty tank caliburn g2",
+        "harga_modal": 25000,
+        "harga_jual": 45000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "169": {
+        "nama": "Rba sixprime",
+        "harga_modal": 250000,
+        "harga_jual": 320000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "rda"
+    },
+    "170": {
+        "nama": "Hanna 30 ml",
+        "harga_modal": 57500,
+        "harga_jual": 80000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "171": {
+        "nama": "Catridge lunix",
+        "harga_modal": 27000,
+        "harga_jual": 40000,
+        "stok": 6,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "172": {
+        "nama": "Bequ salt",
+        "harga_modal": 85000,
+        "harga_jual": 110000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "173": {
+        "nama": "Trilogy salt 30 ml",
+        "harga_modal": 95000,
+        "harga_jual": 120000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "174": {
+        "nama": "Whale dream",
+        "harga_modal": 125000,
+        "harga_jual": 150000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "175": {
+        "nama": "Rokbar 30 ml",
+        "harga_modal": 90000,
+        "harga_jual": 115000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "176": {
+        "nama": "Icy drip vozz 30 ml",
+        "harga_modal": 55000,
+        "harga_jual": 80000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "177": {
+        "nama": "Fruitylicious 15 ml",
+        "harga_modal": 30000,
+        "harga_jual": 45000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "178": {
+        "nama": "Sux fb",
+        "harga_modal": 130000,
+        "harga_jual": 160000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "179": {
+        "nama": "Thelema aura s",
+        "harga_modal": 160000,
+        "harga_jual": 220000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "180": {
+        "nama": "Milk banana",
+        "harga_modal": 115000,
+        "harga_jual": 140000,
+        "stok": 0,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "181": {
+        "nama": "Catridge Nexlim 0.8",
+        "harga_modal": 36667,
+        "harga_jual": 50000,
+        "stok": 3,
+        "foto": "",
+        "kategori": "catridge"
+    },
+    "182": {
+        "nama": "Whale dream boombery",
+        "harga_modal": 120000,
+        "harga_jual": 150000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "183": {
+        "nama": "HK fb",
+        "harga_modal": 122500,
+        "harga_jual": 150000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "freebase"
+    },
+    "184": {
+        "nama": "Kapas Hellvape",
+        "harga_modal": 0,
+        "harga_jual": 60000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "cotton"
+    },
+    "185": {
+        "nama": "Upod 15 ml",
+        "harga_modal": 32500,
+        "harga_jual": 45000,
+        "stok": 7,
+        "foto": "",
+        "kategori": "saltnic"
+    },
+    "186": {
+        "nama": "Caliburn g4",
+        "harga_modal": 160000,
+        "harga_jual": 220000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod"
+    },
+    "187": {
+        "nama": "Taze liq 30 ml",
+        "harga_modal": 90000,
+        "harga_jual": 115000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "188": {
+        "nama": "Sugoi salt",
+        "harga_modal": 90000,
+        "harga_jual": 115000,
+        "stok": 4,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "189": {
+        "nama": "Relx 30 ml",
+        "harga_modal": 82500,
+        "harga_jual": 110000,
+        "stok": 1,
+        "foto": "",
+        "kategori": "pod friendly"
+    },
+    "190": {
+        "nama": "Sugoi fb",
+        "harga_modal": 117500,
+        "harga_jual": 145000,
+        "stok": 2,
+        "foto": "",
+        "kategori": "freebase"
+    }
+}
