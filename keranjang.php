@@ -131,6 +131,32 @@ foreach ($trxList as $trx) {
       </div>
     </div>
 
+    <!-- Ubah Tanggal Semua Transaksi -->
+    <?php if ($totalTrx > 0): ?>
+    <div class="mt-4 bg-white rounded-lg border border-[var(--accent-color)] p-4">
+      <form method="POST" action="api/keranjang_update_tanggal_semua.php" class="flex flex-col sm:flex-row sm:items-center gap-3"
+            onsubmit="return confirm('Ubah tanggal SEMUA transaksi di keranjang?');">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--primary-color)]">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span class="text-sm font-semibold text-[var(--text-primary)]">Ubah Tanggal Semua Transaksi</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="date" name="tanggal" value="<?= date('Y-m-d') ?>" required
+                 class="rounded border border-[var(--accent-color)] px-3 py-2 text-sm">
+          <button class="rounded-lg bg-[var(--primary-color)] text-white px-4 py-2 text-sm font-semibold hover:opacity-90">
+            Terapkan ke Semua
+          </button>
+        </div>
+        <span class="text-xs text-[var(--text-secondary)]">Akan mengubah tanggal di <?= (int)$totalTrx ?> transaksi sekaligus</span>
+      </form>
+    </div>
+    <?php endif; ?>
+
     <!-- Daftar transaksi -->
     <div class="mt-6 bg-white rounded-lg border border-[var(--accent-color)]">
       <div class="p-4 border-b border-[var(--accent-color)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -195,6 +221,23 @@ foreach ($trxList as $trx) {
                         </span>
                       <?php endif; ?>
                     </div>
+
+                    <!-- Form ubah tanggal -->
+                    <form method="POST" action="api/keranjang_update_tanggal.php" class="mt-2 inline-flex items-center gap-2" onclick="event.stopPropagation();">
+                      <input type="hidden" name="trx_index" value="<?= (int)$tIndex ?>">
+                      <label class="text-xs text-[var(--text-secondary)]">Ubah Tanggal:</label>
+                      <input type="date" name="tanggal"
+                             value="<?php
+                               $tglParts = explode('-', $tanggal);
+                               echo (count($tglParts) === 3) ? ($tglParts[2].'-'.$tglParts[1].'-'.$tglParts[0]) : date('Y-m-d');
+                             ?>"
+                             onclick="event.stopPropagation();"
+                             class="rounded border border-[var(--accent-color)] px-2 py-1 text-xs">
+                      <button onclick="event.stopPropagation();"
+                              class="rounded border border-[var(--primary-color)] bg-[var(--primary-color)] text-white px-2 py-1 text-xs hover:opacity-90">
+                        Simpan
+                      </button>
+                    </form>
                   </div>
 
                   <div class="flex flex-wrap items-center gap-3 justify-end">

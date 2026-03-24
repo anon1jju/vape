@@ -47,19 +47,80 @@ foreach ($trxList as $node) {
 
   // format item-based: { items: [ row,row,... ] }
   if (isset($node['items']) && is_array($node['items']) && isset($node['items'][0]) && is_array($node['items'][0]) && isset($node['items'][0]['produk_id'])) {
-    foreach ($node['items'] as $r) if (is_array($r)) $salesRows[] = $r;
+    $nodeDiskon = to_int($node['diskon'] ?? 0);
+    $nodeTotal = to_int($node['total_pemasukan'] ?? 0);
+    if ($nodeTotal <= 0) {
+      foreach ($node['items'] as $r) {
+        if (!is_array($r)) continue;
+        $nodeTotal += to_int($r['harga_jual'] ?? 0) * to_int($r['jumlah'] ?? 0);
+      }
+    }
+    $sisaDiskon = $nodeDiskon;
+    $itemCount = count($node['items']);
+    $idx = 0;
+    foreach ($node['items'] as $r) {
+      if (!is_array($r)) continue;
+      $idx++;
+      if (isset($r['diskon_item'])) {
+        $r['_diskon_item'] = to_int($r['diskon_item']);
+      } elseif ($nodeDiskon > 0 && $nodeTotal > 0) {
+        $qty = to_int($r['jumlah'] ?? 0);
+        if ($qty < 1) $qty = 1;
+        $harga = to_int($r['harga_jual'] ?? 0);
+        $subtotal = $harga * $qty;
+        if ($idx === $itemCount) {
+          $r['_diskon_item'] = $sisaDiskon;
+        } else {
+          $di = (int)round($nodeDiskon * $subtotal / $nodeTotal);
+          $r['_diskon_item'] = $di;
+          $sisaDiskon -= $di;
+        }
+      } else {
+        $r['_diskon_item'] = 0;
+      }
+      $salesRows[] = $r;
+    }
     continue;
   }
 
   // format transaksi: {tanggal, items:[...]}
   if (isset($node['items']) && is_array($node['items'])) {
     $trxTanggal = (string)($node['tanggal'] ?? ($node['items'][0]['tanggal'] ?? ''));
+    $nodeDiskon = to_int($node['diskon'] ?? 0);
+    $nodeTotal = to_int($node['total_pemasukan'] ?? 0);
+    if ($nodeTotal <= 0) {
+      foreach ($node['items'] as $it) {
+        if (!is_array($it)) continue;
+        $nodeTotal += to_int($it['harga_jual'] ?? 0) * to_int($it['jumlah'] ?? 0);
+      }
+    }
+    $sisaDiskon = $nodeDiskon;
+    $itemCount = count($node['items']);
+    $idx = 0;
     foreach ($node['items'] as $it) {
       if (!is_array($it)) continue;
+      $idx++;
       $it['tanggal'] = (string)($it['tanggal'] ?? $trxTanggal);
       $it['waktu'] = (string)($it['waktu'] ?? ($node['jam'] ?? '00:00:00'));
       if (!isset($it['kasir'])) $it['kasir'] = $node['kasir'] ?? 'unknown';
       if (!isset($it['method_bayar'])) $it['method_bayar'] = $node['method_bayar'] ?? 'cash';
+      if (isset($it['diskon_item'])) {
+        $it['_diskon_item'] = to_int($it['diskon_item']);
+      } elseif ($nodeDiskon > 0 && $nodeTotal > 0) {
+        $qty = to_int($it['jumlah'] ?? 0);
+        if ($qty < 1) $qty = 1;
+        $harga = to_int($it['harga_jual'] ?? 0);
+        $subtotal = $harga * $qty;
+        if ($idx === $itemCount) {
+          $it['_diskon_item'] = $sisaDiskon;
+        } else {
+          $di = (int)round($nodeDiskon * $subtotal / $nodeTotal);
+          $it['_diskon_item'] = $di;
+          $sisaDiskon -= $di;
+        }
+      } else {
+        $it['_diskon_item'] = 0;
+      }
       $salesRows[] = $it;
     }
   }
@@ -98,7 +159,8 @@ foreach ($filteredRows as $it) {
 
   $itemTerjual += $qty;
 
-  $lineJual = $hargaJual * $qty;
+  $diskonItem = to_int($it['_diskon_item'] ?? ($it['diskon_item'] ?? 0));
+  $lineJual = ($hargaJual * $qty) - $diskonItem;
   $totalHargaJual += $lineJual;
 
   $hargaModal = 0;
@@ -108,9 +170,9 @@ foreach ($filteredRows as $it) {
   $lineBeli = $hargaModal * $qty;
   $totalHargaBeli += $lineBeli;
 
-  // laba: pakai laba_per_produk jika ada, else jual-modal
-  if ($lpp > 0) $laba += ($lpp * max(1, $qty));
-  else $laba += (($hargaJual - $hargaModal) * $qty);
+  // laba: pakai laba_per_produk jika ada, else jual-modal, dikurangi diskon
+  if ($lpp > 0) $laba += ($lpp * max(1, $qty)) - $diskonItem;
+  else $laba += (($hargaJual - $hargaModal) * $qty) - $diskonItem;
 
   // top produk
   if ($pid !== '') {
@@ -174,6 +236,7 @@ foreach ($filteredRows as $it) {
   $pid = (string)($it['produk_id'] ?? '');
   $hargaModal = ($pid !== '' && isset($produk[$pid]) && is_array($produk[$pid])) ? to_int($produk[$pid]['harga_modal'] ?? 0) : 0;
   $lpp = to_int($it['laba_per_produk'] ?? 0);
+  $diskonItem = to_int($it['_diskon_item'] ?? ($it['diskon_item'] ?? 0));
 
   if (!isset($groups[$gkey])) {
     $groups[$gkey] = [
@@ -190,10 +253,10 @@ foreach ($filteredRows as $it) {
   }
 
   $groups[$gkey]['qty'] += $qty;
-  $groups[$gkey]['omzet'] += ($hargaJual * $qty);
+  $groups[$gkey]['omzet'] += ($hargaJual * $qty) - $diskonItem;
   $groups[$gkey]['modal'] += ($hargaModal * $qty);
 
-  $lineProfit = ($lpp > 0) ? ($lpp * max(1,$qty)) : (($hargaJual - $hargaModal) * $qty);
+  $lineProfit = ($lpp > 0) ? ($lpp * max(1,$qty)) - $diskonItem : (($hargaJual - $hargaModal) * $qty) - $diskonItem;
   $groups[$gkey]['profit'] += $lineProfit;
 }
 
