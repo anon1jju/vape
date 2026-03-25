@@ -19,6 +19,15 @@ $msg = $_GET['msg'] ?? '';
 $msg = is_string($msg) ? $msg : '';
 $err = $_GET['err'] ?? '';
 $err = is_string($err) ? $err : '';
+
+// Hitung total produk valid dan total stok
+$totalProdukValid = 0;
+$totalStokAll = 0;
+foreach ($produk as $pid => $p) {
+  if (!is_array($p)) continue;
+  $totalProdukValid++;
+  $totalStokAll += to_int($p['stok'] ?? 0);
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -45,8 +54,8 @@ $err = is_string($err) ? $err : '';
   <?php include __DIR__ . '/partials/sidebar.php'; ?>
   <div id="overlay" class="fixed inset-0 bg-black/60 z-30 hidden lg:hidden"></div>
 
-  <!-- pb-28 supaya konten bawah tidak ketutup sticky save bar -->
-  <main class="flex-1 p-4 sm:p-8 pb-28">
+  <!-- pb-40 supaya konten bawah tidak ketutup sticky save bar -->
+  <main class="flex-1 p-4 sm:p-8 pb-40">
     <div class="flex items-center justify-between gap-3 mb-6">
       <div class="flex items-center gap-4">
         <button id="menu-toggle" class="p-2 rounded-md text-[var(--text-secondary)] hover:bg-[var(--secondary-color)] lg:hidden">
@@ -80,8 +89,8 @@ $err = is_string($err) ? $err : '';
         </div>
         <div class="rounded-2xl border border-[var(--accent-color)] bg-[var(--secondary-color)] p-4">
           <div class="text-xs text-[var(--text-secondary)]">Total Produk</div>
-          <div class="text-2xl font-extrabold text-[var(--text-primary)] mt-1"><?= count($produk) ?></div>
-          <div class="text-xs text-[var(--text-secondary)] mt-2">Kategori: <?= count($kategoriList) ?></div>
+          <div class="text-2xl font-extrabold text-[var(--text-primary)] mt-1"><?= (int)$totalProdukValid ?></div>
+          <div class="text-xs text-[var(--text-secondary)] mt-2">Total Stok: <?= number_format($totalStokAll, 0, ',', '.') ?> pcs • Kategori: <?= count($kategoriList) ?></div>
         </div>
       </div>
       <div class="text-xs text-[var(--text-secondary)] mt-2">
