@@ -9,6 +9,18 @@ $active = 'dashboard';
 require_once __DIR__ . '/lib/json.php';
 
 $produk = read_json_file(__DIR__ . '/data/produk.json', []);
+
+// ===== Info Toko (all-time, tidak tergantung filter tanggal) =====
+$totalModalToko = 0;
+$totalQtyToko = 0;
+foreach ($produk as $pid => $p) {
+  if (!is_array($p)) continue;
+  $stok = to_int($p['stok'] ?? 0);
+  $modal = to_int($p['harga_modal'] ?? 0);
+  $totalQtyToko += $stok;
+  $totalModalToko += ($modal * $stok);
+}
+
 $checkout = read_json_file(__DIR__ . '/data/checkout.json', ['items'=>[]]);
 $trxList = is_array($checkout['items'] ?? null) ? $checkout['items'] : [];
 
@@ -63,6 +75,15 @@ foreach ($trxList as $node) {
       $salesRows[] = $it;
     }
   }
+}
+
+// ===== Total Pemasukan ALL TIME (tanpa filter tanggal) =====
+$totalPemasukanAllTime = 0;
+foreach ($salesRows as $r) {
+  if (!is_array($r)) continue;
+  $qty = to_int($r['jumlah'] ?? 0);
+  $hargaJual = to_int($r['harga_jual'] ?? 0);
+  $totalPemasukanAllTime += ($hargaJual * $qty);
 }
 
 // ===== Filter by date range =====
@@ -247,6 +268,27 @@ usort($trxTerakhir, function($a, $b){
           <h1 class="text-3xl font-bold text-[var(--text-primary)]">Dashboard</h1>
           <p class="text-[var(--text-secondary)]">Ringkasan penjualan</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Info Toko (All-time) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+      <div class="bg-white rounded-lg border border-[var(--accent-color)] p-4">
+        <div class="text-sm text-[var(--text-secondary)]">Total Modal Produk di Toko</div>
+        <div class="text-2xl font-bold text-[var(--text-primary)] mt-1"><?= rupiah($totalModalToko) ?></div>
+        <div class="text-xs text-[var(--text-secondary)] mt-2">Sum(harga_modal × stok) semua produk</div>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[var(--accent-color)] p-4">
+        <div class="text-sm text-[var(--text-secondary)]">Total Qty Produk di Toko</div>
+        <div class="text-2xl font-bold text-[var(--text-primary)] mt-1"><?= (int)$totalQtyToko ?></div>
+        <div class="text-xs text-[var(--text-secondary)] mt-2">Jumlah semua stok produk saat ini</div>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[var(--accent-color)] p-4">
+        <div class="text-sm text-[var(--text-secondary)]">Total Pemasukan (Selama Jualan)</div>
+        <div class="text-2xl font-bold text-[var(--text-primary)] mt-1"><?= rupiah($totalPemasukanAllTime) ?></div>
+        <div class="text-xs text-[var(--text-secondary)] mt-2">Akumulasi seluruh penjualan (all-time)</div>
       </div>
     </div>
 
